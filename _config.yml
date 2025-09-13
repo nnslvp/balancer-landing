@@ -1,0 +1,37 @@
+# Основные настройки сайта
+name: "Balancer"
+title: "Balancer — совместные расходы"
+description: "Трекер совместных расходов с умным алгоритмом минимизации переводов"
+lang: ru
+locale: ru_RU
+timezone: Europe/Moscow
+
+# GitHub Pages
+url: ""
+baseurl: ""
+
+# Тема и плагины
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Markdown/рендеринг
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Структура ссылок
+permalink: pretty
+
+# Значения по умолчанию
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+# Навигация
+header_pages:
+  - contacts.md
