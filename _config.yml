@@ -35,3 +35,4 @@ defaults:
 # Навигация
 header_pages:
   - contacts.md
+  - privacy-policy.md
