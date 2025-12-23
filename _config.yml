@@ -1,10 +1,19 @@
 # Основные настройки сайта
 name: "Balancer"
-title: "Balancer — совместные расходы"
-description: "Трекер совместных расходов с умным алгоритмом минимизации переводов"
+title: "Balancer — приложение для учета совместных расходов"
+description: "Умное приложение для учета групповых расходов с автоматической минимизацией переводов. Отслеживайте траты, делите счета и контролируйте долги в группах."
 lang: ru
 locale: ru_RU
 timezone: Europe/Moscow
+
+# SEO
+author: "Balancer Team"
+keywords: "балансер, совместные расходы, учет расходов, разделение счета, групповые траты, splitwise аналог, учет долгов"
+
+# Social
+twitter:
+  card: summary_large_image
+og_image: /assets/og-image.png
 
 # GitHub Pages
 url: ""
@@ -15,6 +24,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Markdown/рендеринг
 markdown: kramdown
