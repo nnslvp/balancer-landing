@@ -1,7 +1,7 @@
+---
+---
 User-agent: *
 Allow: /
-Disallow: /assets/
 Disallow: /_site/
 
 Sitemap: {{ site.url }}/sitemap.xml
-
