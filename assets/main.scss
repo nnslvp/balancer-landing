@@ -6,7 +6,6 @@
 :root {
   --primary: #667eea;
   --secondary: #764ba2;
-  --accent: #f093fb;
   --text: #2d3748;
   --bg: #ffffff;
   --shadow: rgba(102, 126, 234, 0.15);
@@ -24,36 +23,54 @@ body {
   line-height: 1.7;
 }
 
+// ── Header ──
 .site-header {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border: none;
   box-shadow: 0 4px 20px var(--shadow);
-  
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+  }
+
   .site-title {
     font-weight: 700;
     font-size: 1.5rem;
+    line-height: 1;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
-  .site-nav .page-link {
-    color: var(--text);
-    font-weight: 500;
-    transition: all 0.3s;
-    
-    &:hover {
-      color: var(--primary);
-      transform: translateY(-2px);
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    border: none;
+
+    .page-link {
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1;
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--primary);
+        text-decoration: none;
+      }
     }
   }
 }
 
+// ── Content card ──
 .page-content {
   padding: 4rem 0;
-  
+
   .wrapper {
     background: var(--bg);
     border-radius: 20px;
@@ -63,6 +80,7 @@ body {
   }
 }
 
+// ── Typography ──
 h1, h2, h3 {
   color: var(--primary);
   font-weight: 700;
@@ -80,26 +98,30 @@ h1 {
 
 h2 {
   font-size: 1.8rem;
-  border-bottom: 3px solid var(--primary);
-  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+  padding-bottom: 0.4rem;
+}
+
+strong {
+  color: inherit;
+  font-weight: 700;
 }
 
 ul {
   list-style: none;
   padding-left: 0;
-  
+
   li {
-    padding: 0.8rem 0;
+    padding: 0.6rem 0;
     padding-left: 2rem;
     position: relative;
-    
+
     &:before {
       content: "✓";
       position: absolute;
       left: 0;
       color: var(--primary);
       font-weight: bold;
-      font-size: 1.2rem;
     }
   }
 }
@@ -108,18 +130,42 @@ a {
   color: var(--primary);
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s;
-  
+  transition: color 0.2s;
+
   &:hover {
     color: var(--secondary);
     text-decoration: underline;
   }
 }
 
-strong {
-  color: var(--secondary);
+// ── App Store CTA button ──
+a[href*="apps.apple.com"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  text-decoration: none !important;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 0.5rem 0 1.5rem;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.5);
+    text-decoration: none !important;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 }
 
+// ── Footer ──
 .site-footer {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
@@ -128,18 +174,19 @@ strong {
   box-shadow: 0 -4px 20px var(--shadow);
 }
 
+// ── Mobile ──
 @media (max-width: 768px) {
   .page-content .wrapper {
     padding: 2rem 1.5rem;
     border-radius: 15px;
   }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+
+  a[href*="apps.apple.com"] {
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
 }
-
